@@ -21,7 +21,7 @@
 				</tr>
 				<tr>
 					<td>Category Name</td>
-					<td><input type="text" name="catName" /></td>
+					<td><input type="text" name="categoryname" /></td>
 				</tr>
 				<tr>
 					<td>Category Desc</td>
@@ -29,14 +29,14 @@
 				</tr>
 				<tr>
 					<td colspan="2"><center>
-							<input type="submit" value="Save Category" />
+							<input type="submit" name="/InsertCategory" value="Save Category" />
 						</center>
 						</td>
 				</tr>
 
 			</table>
 			</br></br>
-		</form>
+			
 			<table align="center" border="1">
 				<tr>
 					<td>Category ID</td>
@@ -45,7 +45,7 @@
 					<td>Operation</td>
 				</tr>
 		
-				<c:forEach items="${categoryList }" var="category">
+				<c:forEach items="${categoryList}" var="category">
 					
 				<tr>
 						<td>${category.id}</td>
@@ -53,7 +53,8 @@
 						<td>${category.categoryDesc}</td>
 						<td>
 						<a href="<c:url value="/editCategory/${category.id}"/>"class="btn btn-success">Edit</a>
-							<a href="<c:url value="/deleteCategory/${category.id}"/>"class="btn btn-danger">Delete</a>
+						<a href="<c:url value="/deleteCategory/${category.id}"/>"class="btn btn-danger">Delete</a>
+						</td>
 					</tr>
 				</c:forEach>
 
