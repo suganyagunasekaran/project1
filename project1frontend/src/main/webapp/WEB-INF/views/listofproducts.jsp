@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>FashionHi5</title>
 <script type="text/javascript">
 $(document).ready(function(){
 	var searchCondition='${searchCondition}'
@@ -21,14 +21,15 @@ $(document).ready(function(){
 <body>
 
 	<div class="container">
-		<b>List of Products</b>
+	
 		<table class="table table-striped" border="1">
 			<thead>
 				<tr>
-					<th>Id</th>
+			
 					<th>Image</th>
 					<th>Product Name</th>
 					<th>Price</th>
+					<th>Supplier</th>
 					<th>Category</th>
 					<th>Action</th>
 				</tr>
@@ -38,28 +39,24 @@ $(document).ready(function(){
 				<!--  items refers to the collection of objects -->
 				<!-- var is local variable ,takes objects one by one from the collection -->
 				<c:forEach var="p" items="${productsList }">
-					<tr >
-						<td><a
-							href="<c:url value='/all/getproduct/${p.id }'></c:url>">${p.id }</a></td>
-					   <td><img src="<c:url value='/resources/images/${p.id }.png'></c:url>" height="30px" width="30px"></td>
-						<td><a
-							href="<c:url value='/all/getproduct/${p.id }'></c:url>">${p.productname }</a></td>
+					<tr>
+					   <td><img src="<c:url value='/resources/images/${p.id }.jpg'></c:url>" height="50px" width="50px" alt="Image not available"></td>
+						<td>${p.productname }</td>
 						<td>${p.price }</td>
+						<td>${p.supplier.supplierName }</td>
 						<td>${p.category.categoryname }</td>
 						<td>
 						
-						   <a href="<c:url value='/all/getproduct/${p.id }'></c:url>">
-							<span
-								class="glyphicon glyphicon-info-sign"></span></a> 
-				
-                                <security:authorize access="hasRole('ROLE_ADMIN')">
-								<a href="<c:url value='/admin/deleteproduct/${p.id }'></c:url>"><span
-								class="glyphicon glyphicon-trash"></span></a> 
-								
-								<a href="<c:url value='/admin/getupdateform/${p.id }'></c:url>"><span
-								class="glyphicon glyphicon-pencil"></span></a>
-								  </security:authorize>
-									</td>
+						   <c:url value="/all/getproduct/${p.id }" var="viewUrl"></c:url> 
+					       <c:url value="/admin/deleteproduct/${p.id }" var="deleteUrl"></c:url>
+			               <c:url value="/admin/getupdateform/${p.id }" var="editUrl"></c:url>
+							
+							<a href="${viewUrl }"><span class="glyphicon glyphicon-info-sign"></span></a>
+							<security:authorize access="hasRole('ROLE_ADMIN')">
+							<a href="${deleteUrl }"><span class="glyphicon glyphicon-trash"></span></a>
+							<a href="${editUrl }"><span class="glyphicon glyphicon-pencil"></span></a>
+							</security:authorize>
+						 </td>
                               
 					</tr>
 				</c:forEach>
