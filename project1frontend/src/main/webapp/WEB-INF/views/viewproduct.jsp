@@ -15,7 +15,7 @@
 			<div class="panel panel-body">
 			<c:url value="/cart/addtocart/${productObj.id}" var="url"></c:url>
 			<form action="${url }" >
-			<img src="<c:url value='/resources/images/${productObj.id}.png'></c:url>"><br>
+			<img src="<c:url value='/resources/images/${productObj.id}.jpg'></c:url>"><br>
 			<b>Product Name:</b>${productObj.productname }<br>
 			<b>Product Desc:</b>${productObj.productdesc }<br>
 			<b>Price:</b>${productObj.price }<br>
@@ -34,6 +34,6 @@
 			</div>
 		</div>
 	</div>
-	<a href="<c:url value='/all/getallproducts'></c:url>">Browse all products</a>
+	<a href="<c:url value='/all/getallproducts'></c:url>">Other products</a>
 </body>
 </html>

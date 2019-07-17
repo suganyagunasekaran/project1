@@ -70,12 +70,12 @@ public class SupplierDaoImpl implements SupplierDao
 		return supplier;
 	}
 
-	public List<Supplier> listSuppliers() 
+	public List<Supplier> suppliers() 
 	{
 		Session session=sessionFactory.openSession();
-		List<Supplier> listSuppliers=(List<Supplier>)session.createQuery("from Supplier").list();
+		List<Supplier> suppliers=(List<Supplier>)session.createQuery("from Supplier").list();
 		session.close();
-		return listSuppliers;
+		return suppliers;
 	}
 
 

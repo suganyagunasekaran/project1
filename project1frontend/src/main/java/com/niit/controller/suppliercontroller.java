@@ -20,12 +20,12 @@ public class suppliercontroller
 	@Autowired
 	SupplierDao supplierDao;
 
-	@RequestMapping("/supplier")
+	@RequestMapping("/admin/getsupplier")
 	public String showCategory(Model m)
 	{
-		List<Supplier> listSuppliers=supplierDao.listSuppliers();
+		List<Supplier> suppliers=supplierDao.suppliers();
 		
-		m.addAttribute("supplierList", listSuppliers);
+		m.addAttribute("supplierList", suppliers);
 		
 		return "supplier";
 	}
@@ -39,7 +39,7 @@ public class suppliercontroller
 		supplierDao.addSupplier(supplier);
 		
 		
-		List<Supplier> listSuppliers=supplierDao.listSuppliers();
+		List<Supplier> listSuppliers=supplierDao.suppliers();
 		m.addAttribute("supplierList", listSuppliers);
 		
 		return "supplier";
@@ -51,8 +51,8 @@ public class suppliercontroller
 		Supplier supplier=supplierDao.getSupplier(supplierId);
 		supplierDao.deleteSupplier(supplier);
 		
-		List<Supplier> listSuppliers=supplierDao.listSuppliers();
-		m.addAttribute("supplierList", listSuppliers);
+		List<Supplier> suppliers=supplierDao.suppliers();
+		m.addAttribute("supplierList", suppliers);
 		
 		return "supplier";
 	}
@@ -72,8 +72,8 @@ public class suppliercontroller
 		 supplier.setSupplierName(supplierName);
 		 supplier.setSupplierDesc(supplierDesc);
 		 supplierDao.updateSupplier(supplier);
-		 List< Supplier> listSuppliers=supplierDao.listSuppliers();
-		 m.addAttribute("supplierList",listSuppliers);
+		 List< Supplier> suppliers=supplierDao.suppliers();
+		 m.addAttribute("supplierList",suppliers);
 		 return "supplier";
 	 }
 	
