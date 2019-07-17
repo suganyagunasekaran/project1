@@ -1,9 +1,14 @@
 @charset "ISO-8859-1";
+
 #nav_bar{
-	background-color:#C0C0C0;
+	background-color:black;
+	width:100;
 }
 #links a{
-	color:#400040;
-	font-size: 18px
-	
+	color:white;
+	font-size:18px;
+}
+#nav_bar
+{
+	 width: webkit-fill-available;
 }
