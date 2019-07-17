@@ -53,6 +53,16 @@
 		    <form:option value="${c.id }">${c.categoryname }</form:option>
 		    </c:forEach>
 			</form:select></td></tr>
+			
+			<tr><td>Select the Supplier</td>
+			
+			<td><form:select path="supplier.supplierId"><!-- FK column value -->
+			<!-- value is to set the value for the path category.id -->
+		    <c:forEach items="${suppliers }" var="c">
+		    <form:option value="${c.supplierId }">${c.supplierName }</form:option>
+		    </c:forEach>
+			</form:select></td></tr>
+			
 			<tr><td>Upload image</td><td>
 			<form:input path="image" type="file"/>
 			</td></tr>

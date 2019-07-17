@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>FashionHi5/SignUp</title>
 <link href="<c:url value='/resources/css/registration.css'></c:url>" rel="stylesheet">
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 <script type="text/javascript">
 
 function fillShippingAddress(form){
@@ -58,41 +58,45 @@ $(document).ready(function(){
 })
 </script>
 </head>
-<body>
+<body background="resources/images/max-onam-3.jpg">
+
 <div class="container">
 <c:url value="/all/registercustomer" var="url"></c:url>
 <form:form modelAttribute="customer" action="${url }" id="form">
 
 <form:hidden path="id"/>
-
+<form>
+<h1>Sign Up  </h1>
+<br>
 <form:label path="firstname">Enter Firstname</form:label>
-<form:input path="firstname" id="firstname"/>
+<form:input path="firstname"  placeholder="FirstName" id="firstname"/>
 
 
 <form:label path="lastname">Enter Lastname</form:label>
-<form:input path="lastname" id="lastname"/>
+<form:input path="lastname" placeholder="LastName" id="lastname"/>
 
 
 <form:label path="phonenumber">Enter Phonenumber</form:label>
-<form:input path="phonenumber" id="phonenumber"/>
+<form:input path="phonenumber"  placeholder="phonenumber" id="phonenumber"/>
 
-<hr>
-<b>Login Credentials</b><br>
-<form:label path="user.email">Enter Email</form:label>
-<form:input path="user.email" id="user.email" type="email"/>
+
+<form:label path="user.email" >Enter Email</form:label>
+<form:input path="user.email" placeholder="email" id="user.email" type="email"/>
+<br>
 <span style="color:red">${error }</span>
-<form:label path="user.password">Enter password</form:label>
-<form:input path="user.password" id="user.password" type="password"/>
+
+<form:label path="user.password" >Enter Password</form:label>
+<form:input path="user.password" placeholder="password" id="user.password" type="password"/>
 
 
-
+<!--  
 <hr>
 <b>Billing Address</b><br>
 
-<form:label path="billingaddress.apartmentnumber">Enter Apartmentnumber</form:label>
+<form:label path="billingaddress.apartmentnumber">Enter Apartment number</form:label>
 <form:input path="billingaddress.apartmentnumber" id="billingaddress.apartmentnumber"/>
 
-<form:label path="billingaddress.streetname">Enter streetname</form:label>
+<form:label path="billingaddress.streetname">Enter street name</form:label>
 <form:input path="billingaddress.streetname" id="billingaddress.streetname"/>
 
 <form:label path="billingaddress.city">Enter city</form:label>
@@ -110,6 +114,7 @@ $(document).ready(function(){
 <b>Shipping address</b><br>
 Check this if shipping address is same as billing address
 <input type="checkbox" onclick="fillShippingAddress(this.form)" id="shippingaddressform">
+
 <form:label path="shippingaddress.apartmentnumber">Enter Apartmentnumber</form:label>
 <form:input path="shippingaddress.apartmentnumber" id="shippingaddress.apartmentnumber"/>
 
@@ -126,10 +131,11 @@ Check this if shipping address is same as billing address
 <form:input path="shippingaddress.country" id="shippingaddress.country"/>
 
 <form:label path="shippingaddress.zipcode">Enter zipcode</form:label>
-<form:input path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>
+<form:input path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>-->
 <br>
-<input type="submit" value="Register" style="background-color:maroon;">
 
+<button type="submit" value="Register">Submit</button>
+</form>
 </form:form>
 </div>
 

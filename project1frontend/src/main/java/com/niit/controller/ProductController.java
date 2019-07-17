@@ -65,6 +65,8 @@ public String getproductform(Model model){
 	Product p=new Product();
 	model.addAttribute("product",p);
 	model.addAttribute("categories",productDao.getAllCategories());
+	model.addAttribute("suppliers",productDao.getAllSuppliers());
+
 	//In productform, access  the values of all the properties of product p
 	//in the form, p.getId(),p.getProductname(),p.getPrice(),p.getQuantity(),p.getProductdesc()
 	return "productform";
@@ -74,6 +76,8 @@ public String addProduct(@Valid @ModelAttribute(name="product") Product product,
 	//after validation, if result has any errors
 	if(result.hasErrors()){//if it is true, result has errors
 		model.addAttribute("categories",productDao.getAllCategories());
+		model.addAttribute("suppliers",productDao.getAllSuppliers());
+
 		return "productform";
 	}
 	
@@ -82,7 +86,7 @@ public String addProduct(@Valid @ModelAttribute(name="product") Product product,
 	MultipartFile img=product.getImage();
 	System.out.println(request.getServletContext().getRealPath("/"));
 	//Defining a path
-	Path path=Paths.get(request.getServletContext().getRealPath("/")+"/WEB-INF/resources/images/"+product.getId()+".png");
+	Path path=Paths.get(request.getServletContext().getRealPath("/")+"/WEB-INF/resources/images/"+product.getId()+".jpg");
 	//transfer the image to the file
 	if(!img.isEmpty()&&img!=null){
 		try {
@@ -104,19 +108,23 @@ public String getUpdateProductForm(@PathVariable int id,Model model){
 	Product product=productDao.getProduct(id);
 	model.addAttribute("product",product);
 	model.addAttribute("categories",productDao.getAllCategories());
+	model.addAttribute("suppliers",productDao.getAllSuppliers());
+
 	return "updateproductform";
 }
 @RequestMapping(value="/admin/updateproduct")
 public String updateProduct(@Valid @ModelAttribute Product product,BindingResult result,Model model,HttpServletRequest request){//product will have updated values
    if(result.hasErrors()){
 	   model.addAttribute("categories",productDao.getAllCategories());
+       model.addAttribute("suppliers",productDao.getAllSuppliers());
+
 	   return "updateproductform";
    }
 	productDao.updateProduct(product);
 	MultipartFile img=product.getImage();
 	System.out.println(request.getServletContext().getRealPath("/"));
 	//Defining a path
-	Path path=Paths.get(request.getServletContext().getRealPath("/")+"/WEB-INF/resources/images/"+product.getId()+".png");
+	Path path=Paths.get(request.getServletContext().getRealPath("/")+"/WEB-INF/resources/images/"+product.getId()+".jpg");
 	//transfer the image to the file
 	if(!img.isEmpty()&&img!=null){
 		try {

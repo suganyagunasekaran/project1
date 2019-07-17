@@ -27,6 +27,8 @@ private int quantity;
 private double price;
 @ManyToOne
 private Category category;
+@ManyToOne
+private Supplier supplier;
 @Transient
 private MultipartFile image;
 public int getId() {
@@ -64,6 +66,12 @@ public Category getCategory() {
 }
 public void setCategory(Category category) {
 	this.category = category;
+}
+public Supplier getSupplier() {
+	return supplier;
+}
+public void setSupplier(Supplier supplier) {
+	this.supplier = supplier;
 }
 public MultipartFile getImage() {
 	return image;
