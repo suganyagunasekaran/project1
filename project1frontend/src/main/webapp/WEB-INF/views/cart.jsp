@@ -9,12 +9,6 @@
 </head>
 <body>
 <div class="container">
-<c:if test="${ !empty(cartItems) }">
-<a href="<c:url value='/cart/clearcart'></c:url>" class="btn btn-danger" pull-left  >
-<span class="glyphicon glypicon-remove"></span>
-Clear Cart
-</a>
-</c:if>
 <table class="table table-striped">
 <thead id="thead">
 <tr><th>ProductName</th><th>Quantity</th><th>Total Price</th><th>Remove</th>
@@ -29,10 +23,12 @@ Clear Cart
 <td>${cartItem.totalPrice }</td>
 <c:set var="grandTotal" value="${grandTotal + cartItem.totalPrice }"></c:set>
 
-<td><a href="<c:url value='/cart/removecartitem/${cartItem.cartItemId }'></c:url>" class="label label-danger" pull-left >
-
+<td><a href="<c:url value='/cart/removecartitem/${cartItem.cartItemId }'></c:url>" class="label label-danger pull-left" >
 <span class="glyphicon glyphicon-remove" ></span>Remove
 </a></td>
+<!-- <td><a href="<c:url value='/cart/updatecartitem/${cartItem.cartItemId }'></c:url>" class="label label-danger pull-left" >
+<span class="glyphicon glyphicon-update" ></span>Update
+</a></td> -->
 
 </tr>
 </c:forEach>
@@ -42,10 +38,17 @@ Total Price : ${grandTotal }
 <c:if test="${empty(cartItems) }">
 <h3>Your Cart is Empty</h3>
 </c:if>
+
 <c:if test="${ !empty(cartItems) }">
-<a href="<c:url value='/cart/shippingaddressform'></c:url>" class="btn btn-success pull-right">
-<span class="glyphicon glyphicon-shopping-cart"></span> Place Order  </a>
+<a href="<c:url value='/cart/shipping'></c:url>" class="btn btn-success pull-right">
+<span class="glyphicon glyphicon-shopping-cart"></span> CheckOut  </a>
 </c:if>
+
+<c:if test="${ !empty(cartItems) }">
+<a href="<c:url value='/cart/clearcart'></c:url>" class="btn btn-danger pull-right"  >
+<span class="glyphicon glypicon-remove"></span>Clear Cart </a>
+</c:if>
+
 </div>
 
 </body>
