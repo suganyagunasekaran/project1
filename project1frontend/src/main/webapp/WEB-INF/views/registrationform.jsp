@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>FashionHi5/SignUp</title>
+<title>FashionHi5</title>
 <link href="<c:url value='/resources/css/registration.css'></c:url>" rel="stylesheet">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+
 <script type="text/javascript">
 
 function fillShippingAddress(form){
@@ -42,6 +43,7 @@ $(document).ready(function(){
 			phonenumber:{required:true,number:true,minlength:10,maxlength:10},
 			"user.email":{required:true,email:true},
 			"user.password":{required:true,minlength:5,maxlength:10},
+		},
 			"billingaddress.apartmentnumber":{required:true},
 			"billingaddress.streetname":{required:true},
 			"billingaddress.state":{required:true},
@@ -53,92 +55,100 @@ $(document).ready(function(){
 			firstname:{required:"Firstname is mandatory"},
 			phonenumber:{required:"Phonenumber is required"},
 			"user.email":{required:"Email is required",email:"Please enter valid email address"}
-		}
-	})
+		})	
 })
 </script>
 </head>
-<body background="resources/images/max-onam-3.jpg">
+<body>
 
-<div class="container">
+<div align="center">
+<h1>Sign Up</h1>
+</div>
 <c:url value="/all/registercustomer" var="url"></c:url>
 <form:form modelAttribute="customer" action="${url }" id="form">
-
+<div class="row">
+<div class="column">
 <form:hidden path="id"/>
-<form>
-<h1>Sign Up  </h1>
+<b>User Details:</b><br>
 <br>
-<form:label path="firstname">Enter Firstname</form:label>
-<form:input path="firstname"  placeholder="FirstName" id="firstname"/>
+<form:label path="firstname">Firstname</form:label>
+<form:input path="firstname" id="firstname"/>
 
 
-<form:label path="lastname">Enter Lastname</form:label>
-<form:input path="lastname" placeholder="LastName" id="lastname"/>
+<form:label path="lastname">Lastname</form:label>
+<form:input path="lastname" id="lastname"/>
 
 
-<form:label path="phonenumber">Enter Phonenumber</form:label>
-<form:input path="phonenumber"  placeholder="phonenumber" id="phonenumber"/>
-
-
-<form:label path="user.email" >Enter Email</form:label>
-<form:input path="user.email" placeholder="email" id="user.email" type="email"/>
-<br>
-<span style="color:red">${error }</span>
-
-<form:label path="user.password" >Enter Password</form:label>
-<form:input path="user.password" placeholder="password" id="user.password" type="password"/>
-
-
-<!--  
-<hr>
-<b>Billing Address</b><br>
-
-<form:label path="billingaddress.apartmentnumber">Enter Apartment number</form:label>
-<form:input path="billingaddress.apartmentnumber" id="billingaddress.apartmentnumber"/>
-
-<form:label path="billingaddress.streetname">Enter street name</form:label>
-<form:input path="billingaddress.streetname" id="billingaddress.streetname"/>
-
-<form:label path="billingaddress.city">Enter city</form:label>
-<form:input path="billingaddress.city" id="billingaddress.city"/>
-
-<form:label path="billingaddress.state">Enter state</form:label>
-<form:input path="billingaddress.state" id="billingaddress.state"/>
-
-<form:label path="billingaddress.country">Enter country</form:label>
-<form:input path="billingaddress.country" id="billingaddress.country"/>
-
-<form:label path="billingaddress.zipcode">Enter Zipcode</form:label>
-<form:input path="billingaddress.zipcode" id="billingaddress.zipcode"/>
-<hr>
-<b>Shipping address</b><br>
-Check this if shipping address is same as billing address
-<input type="checkbox" onclick="fillShippingAddress(this.form)" id="shippingaddressform">
-
-<form:label path="shippingaddress.apartmentnumber">Enter Apartmentnumber</form:label>
-<form:input path="shippingaddress.apartmentnumber" id="shippingaddress.apartmentnumber"/>
-
-<form:label path="shippingaddress.streetname">Enter streetname</form:label>
-<form:input path="shippingaddress.streetname" id="shippingaddress.streetname"/>
-
-<form:label path="shippingaddress.city">Enter city</form:label>
-<form:input path="shippingaddress.city" id="shippingaddress.city"/>
-
-<form:label path="shippingaddress.state">Enter state</form:label>
-<form:input path="shippingaddress.state" id="shippingaddress.state"/>
-
-<form:label path="shippingaddress.country">Enter country</form:label>
-<form:input path="shippingaddress.country" id="shippingaddress.country"/>
-
-<form:label path="shippingaddress.zipcode">Enter zipcode</form:label>
-<form:input path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>-->
-<br>
-
-<button type="submit" value="Register">Submit</button>
-</form>
-</form:form>
+<form:label path="phonenumber">Phonenumber</form:label>
+<form:input path="phonenumber" id="phonenumber"/>
 </div>
 
+<div class="column">
+
+<b>Login Credentials:</b><br>
+<br>
+<form:label path="user.email">Email</form:label>
+<form:input path="user.email" id="user.email" type="email"/>
+<span style="color:red">${error }</span>
+<form:label path="user.password">Password</form:label>
+<form:input path="user.password" id="user.password" type="password"/>
+<br>
+<br>
+<br>
+
+Check this if shipping address is same as billing address
+		<input type="checkbox" onclick="fillShippingAddress(this.form)" id="shippingaddressform">
+	</div>
+	</div>	
+<div class="row">
+<div class="column">
+<b>Billing address:</b><br>
+<br>
+<form:label path="billingaddress.apartmentnumber">Apartment No</form:label>
+<form:input path="billingaddress.apartmentnumber" id="billingaddress.apartmentnumber"/>
+
+<form:label path="billingaddress.streetname">Streetname</form:label>
+<form:input path="billingaddress.streetname" id="billingaddress.streetname"/>
+
+<form:label path="billingaddress.city">City</form:label>
+<form:input path="billingaddress.city" id="billingaddress.city"/>
+
+<form:label path="billingaddress.state">State</form:label>
+<form:input path="billingaddress.state" id="billingaddress.state"/>
+
+<form:label path="billingaddress.country">Country</form:label>
+<form:input path="billingaddress.country" id="billingaddress.country"/>
+
+<form:label path="billingaddress.zipcode">Zipcode</form:label>
+<form:input path="billingaddress.zipcode" id="billingaddress.zipcode"/>
+</div>
+<div class="column">
+<b>Shipping address:</b><br>
+<br>
+<form:label path="shippingaddress.apartmentnumber">Apartment No</form:label>
+<form:input path="shippingaddress.apartmentnumber" id="shippingaddress.apartmentnumber"/>
+
+<form:label path="shippingaddress.streetname">Streetname</form:label>
+<form:input path="shippingaddress.streetname" id="shippingaddress.streetname"/>
+
+<form:label path="shippingaddress.city">City</form:label>
+<form:input path="shippingaddress.city" id="shippingaddress.city"/>
+
+<form:label path="shippingaddress.state">State</form:label>
+<form:input path="shippingaddress.state" id="shippingaddress.state"/>
+
+<form:label path="shippingaddress.country">Country</form:label>
+<form:input path="shippingaddress.country" id="shippingaddress.country"/>
+
+<form:label path="shippingaddress.zipcode">Zipcode </form:label>
+<form:input path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>
+</div>
+</div>
+<input type="submit" value="Register" style="background-color:#000060;">
+
+
+
+
+</form:form>
 </body>
 </html>
-
