@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>FashionHi5</title>
 </head>
 <body>
 	<div class="container">
-		Product Details<br>
 		<div class="panel-info">
 			<div class="panel panel-heading">Product Details</div>
 			<div class="panel panel-body">
 			<c:url value="/cart/addtocart/${productObj.id}" var="url"></c:url>
-			<form action="${url }" >
+			
+			<form action="${url }">
 			<img src="<c:url value='/resources/images/${productObj.id}.jpg'></c:url>"><br>
 			<b>Product Name:</b>${productObj.productname }<br>
 			<b>Product Desc:</b>${productObj.productdesc }<br>
@@ -34,6 +34,6 @@
 			</div>
 		</div>
 	</div>
-	<a href="<c:url value='/all/getallproducts'></c:url>">Other products</a>
+	<a href="<c:url value='/all/getallproducts'></c:url>"> View other products</a>
 </body>
 </html>
