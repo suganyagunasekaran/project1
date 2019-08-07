@@ -8,22 +8,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>FashionHi5</title>
 </head>
 <body>
 <div class="container-wrapper">
     <div class="container">
-    
-       
-        <div class="container">
-        
-
             <div class="row">
 
+<c:url var="url" value="/cart/createorder"></c:url>
                              <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
 
                        <div >
-                            <h1 align="center">Invoice</h1>
+                            <h1 align="center">Conform Order</h1>
                        </div>
                         ORDER ID: ${customerorder.orderId }
                   
@@ -48,7 +44,7 @@
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <address>
-                                    <strong><button disabled>Billing Address</button></strong><br/>
+                                    <strong>Billing Address</strong><br/>
                                         ${customerorder.user.customer.billingaddress.apartmentnumber},
                                         ${customerorder.user.customer.billingaddress.streetname}
                                     <br/>
@@ -74,7 +70,7 @@
                               
                                 <c:forEach var="cartItem" items="${cartItems}">
                                     <tr>
-                            <c:url value="/resources/images/${cartItem.product.id }.png" var="imgUrl"></c:url>
+                            <c:url value="/resources/images/${cartItem.product.id }.jpg" var="imgUrl"></c:url>
                                         <td><img src="${imgUrl }" height="50px" width="50px">  </td>
                                         <td class="col-md-9"><em>${cartItem.product.productname}</em></td>
                                         <td class="col-md-1" style="text-align: center">${cartItem.quantity}</td>
@@ -95,26 +91,20 @@
                                         <h4><strong>Rs. ${customerorder.grandTotal }</strong></h4>
                                     </td>
                                 </tr>
-
+                                <tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="<c:url value='/cart/payment'/>" class="btn btn-default">Payment<span class="glyphicon glyphicon-play"></span></a></td>
+</tr>
                                 </tbody>
                             </table>
-                           
                         </div>
-
-
-                      
                     </div>
-             
             </div>
-            
-          
         </div>
         </div>
-        </div>
-
-
-
-
 </body>
-</html>
-
+</html>   
+                            
