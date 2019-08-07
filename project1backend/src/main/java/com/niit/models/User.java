@@ -14,6 +14,7 @@ private boolean enabled;
 private Customer customer;
 @OneToOne(mappedBy="user",cascade=CascadeType.ALL)
 private Authorities authorities;
+
 public String getEmail() {
 	return email;
 }
