@@ -3,30 +3,56 @@ font-family:'PT Sans',Helvetica, Arial, sans-serif;
 color:#fff;
 background-repeat: no-repeat;
 background-size:cover;
-background-color:green;
+background-image:url(https://cdn3.vectorstock.com/i/1000x1000/83/27/abstract-geometric-blue-background-vector-3958327.jpg);
+background-color:#00aeef;
+
+}
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 10px;
 }
 
-h1 {
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+p {
+	 font-family: 'Cookie';
 	color:#fff;
-	font-size: 30px;
+	font-size: 45px;
+}
+b {
+	 font-family: 'Cookie';
+	color:#fff;
+	font-size: 35px;
+}
+h1 {
+	 font-family: 'Cookie';
+	color:#fff;
+	font-size: 45px;
 	font-weight: 700;
 	text-shadow:0 1px 4px rgba(0,0,0,.2);
 	text-align:center;
 }
-
 form {
-position:relative;
-width:305px;
+position:left;
+width:1000px;
 margin:15px auto 0 auto;
-
+font-size:18px;
 }
 
+
 input {
-width:270px;
+width:470px;
 height:42px;
-margin-top:25px;
-padding:0 15px;
-background:#2d2d2d;
+margin-top:20px;
+margin-bottom:20px;
+padding:0 35px;
+background:#c0c0c0;
 background:rgba(45,45,45,.15);
 -moz-border-radius: 6px;
 -webkit-border-radius:6px;
@@ -64,11 +90,12 @@ box-shadow:
         0 2px 7px 0 rgba(0,0,0,.2);
 }
 
-button {
+input:type {
 cursor:pointer;
-width:270px;
+width:770px;
 height:44px;
 margin-top:25px;
+
 padding:0;
 background:#ef4300;
 -moz-border-radius: 6px;
@@ -99,6 +126,7 @@ label
 	font-family:'PT Sans', Helvetica, Arial, sans-serif;
 	color:#fff;
 	text-align:left;
+	font-size:18px;
 }
 
 button:hover {
@@ -126,8 +154,26 @@ button:active {
 
     border: 0px solid #ef4300;
 }
+button
+{
+	background-color:#000060;
+    cursor:pointer;
+    width:470px;
+    height:44px;
+}
+input[type=submit]
+{
+	background-color:#000060;
+    cursor:pointer;
+    width:470px;
+    height:44px;
+    margin-left:300px!important;
+}
 
-
-
-
-
+input[type=checkbox]
+{
+	width:30px;
+	height:20px;
+	margin:0px;
+	padding:10px;
+}
