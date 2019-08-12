@@ -39,9 +39,23 @@ private SessionFactory sessionFactory;
 		Session session=sessionFactory.getCurrentSession();
 		CartItem cartItem=(CartItem)session.get(CartItem.class, cartItemId);
 		session.delete(cartItem);
-		
-		
 	}
+	/*public boolean updateCartItem(CartItem cartItem) {
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(cartItem);
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception Arised:"+e);
+			return false;
+		}
+		}*/
+		//Session session=sessionFactory.getCurrentSession();
+		//CartItem cartItem=(CartItem)session.get(CartItem.class, quantity);
+		//session.save(cartItem);
+		
+	
 	public CustomerOrder createCustomerOrder(CustomerOrder customerOrder) {
 		Session session=sessionFactory.getCurrentSession();
 		session.save(customerOrder);
@@ -49,5 +63,11 @@ private SessionFactory sessionFactory;
 		//user -> customer -> updated shipping address
 		return customerOrder;
 	}
-
+	/*public CartItem getCartItem(int cartItemId) {
+		Session session=sessionFactory.openSession();
+		CartItem cartItem=(CartItem) session.get(CartItem.class, cartItemId);
+		session.close();
+		return cartItem;
+	}
+*/
 }
