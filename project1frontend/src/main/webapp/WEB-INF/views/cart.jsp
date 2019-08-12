@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 <div class="container">
 <table class="table table-striped">
 <thead id="thead">
@@ -19,16 +19,17 @@
 <c:forEach items="${cartItems }" var="cartItem">
 <tr>
 <td>${cartItem.product.productname }</td>
-<td>${cartItem.quantity }</td>
+<td class="col-sm-1 col-md-1" style="text-align:center"><input type="text" class="form-control" id="quantity" value="${cartItem.quantity }"></td>
 <td>${cartItem.totalPrice }</td>
 <c:set var="grandTotal" value="${grandTotal + cartItem.totalPrice }"></c:set>
 
 <td><a href="<c:url value='/cart/removecartitem/${cartItem.cartItemId }'></c:url>" class="label label-danger pull-left" >
 <span class="glyphicon glyphicon-remove" ></span>Remove
-</a></td>
-<!-- <td><a href="<c:url value='/cart/updatecartitem/${cartItem.cartItemId }'></c:url>" class="label label-danger pull-left" >
-<span class="glyphicon glyphicon-update" ></span>Update
-</a></td> -->
+</a>
+<!-- <a href="<c:url value='/all/getproduct/{id}'></c:url>" class="label label-primary pull-left">
+<span class="glyphicon glyphicon-update" ></span>Update -->
+</a>
+</td>
 
 </tr>
 </c:forEach>
@@ -40,15 +41,20 @@ Total Price : ${grandTotal }
 </c:if>
 
 <c:if test="${ !empty(cartItems) }">
-<a href="<c:url value='/cart/shipping'></c:url>" class="btn btn-success pull-right">
-<span class="glyphicon glyphicon-shopping-cart"></span> CheckOut  </a>
+<a href="<c:url value='/cart/shippingaddress'></c:url>" class="btn btn-success pull-right" style="
+    margin-right: 20px;">
+<span class="glyphicon glyphicon-shopping-cart"></span> CheckOut </a>
 </c:if>
 
 <c:if test="${ !empty(cartItems) }">
-<a href="<c:url value='/cart/clearcart'></c:url>" class="btn btn-danger pull-right"  >
-<span class="glyphicon glypicon-remove"></span>Clear Cart </a>
+<a href="<c:url value='/cart/clearcart'></c:url>" class="btn btn-danger pull-right" style="
+    margin-right: 20px;">
+<span class="glyphicon glypicon-remove"></span>ClearCart </a>
 </c:if>
 
+<a href="<c:url value='/all/getallproducts'></c:url>" class="btn btn-success pull-left" style="
+    margin-right: 20px;">
+<span class="glyphicon glyphicon-shopping-cart"></span> ContinueShopping  </a>
 </div>
 
 </body>
