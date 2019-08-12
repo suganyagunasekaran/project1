@@ -23,6 +23,7 @@ public int getCartItemId() {
 public void setCartItemId(int cartItemId) {
 	this.cartItemId = cartItemId;
 }
+
 public Product getProduct() {
 	return product;
 }
