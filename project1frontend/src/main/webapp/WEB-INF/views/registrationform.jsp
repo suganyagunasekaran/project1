@@ -55,7 +55,7 @@ $(document).ready(function(){
 			firstname:{required:"Firstname is mandatory"},
 			phonenumber:{required:"Phonenumber is required"},
 			"user.email":{required:"Email is required",email:"Please enter valid email address"}
-		})	
+		}
 })
 </script>
 </head>
@@ -63,6 +63,7 @@ $(document).ready(function(){
 
 <div align="center">
 <h1>Sign Up</h1>
+<br>
 </div>
 <c:url value="/all/registercustomer" var="url"></c:url>
 <form:form modelAttribute="customer" action="${url }" id="form">
@@ -70,7 +71,7 @@ $(document).ready(function(){
 <div class="column">
 <form:hidden path="id"/>
 <b>User Details:</b><br>
-<br>
+<hr>
 <form:label path="firstname">Firstname</form:label>
 <form:input path="firstname" id="firstname"/>
 
@@ -86,7 +87,7 @@ $(document).ready(function(){
 <div class="column">
 
 <b>Login Credentials:</b><br>
-<br>
+<hr>
 <form:label path="user.email">Email</form:label>
 <form:input path="user.email" id="user.email" type="email"/>
 <span style="color:red">${error }</span>
@@ -96,14 +97,15 @@ $(document).ready(function(){
 <br>
 <br>
 
-Check this if shipping address is same as billing address
+Check this if same address is for shipping
 		<input type="checkbox" onclick="fillShippingAddress(this.form)" id="shippingaddressform">
 	</div>
-	</div>	
+	</div>
+	<b>Address:</b><br>	
 <div class="row">
 <div class="column">
-<b>Billing address:</b><br>
-<br>
+<hr>
+
 <form:label path="billingaddress.apartmentnumber">Apartment No</form:label>
 <form:input path="billingaddress.apartmentnumber" id="billingaddress.apartmentnumber"/>
 
@@ -112,7 +114,9 @@ Check this if shipping address is same as billing address
 
 <form:label path="billingaddress.city">City</form:label>
 <form:input path="billingaddress.city" id="billingaddress.city"/>
-
+</div>
+<div class="column">
+<hr>
 <form:label path="billingaddress.state">State</form:label>
 <form:input path="billingaddress.state" id="billingaddress.state"/>
 
@@ -121,7 +125,7 @@ Check this if shipping address is same as billing address
 
 <form:label path="billingaddress.zipcode">Zipcode</form:label>
 <form:input path="billingaddress.zipcode" id="billingaddress.zipcode"/>
-</div>
+</div><!--  
 <div class="column">
 <b>Shipping address:</b><br>
 <br>
@@ -143,6 +147,7 @@ Check this if shipping address is same as billing address
 <form:label path="shippingaddress.zipcode">Zipcode </form:label>
 <form:input path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>
 </div>
+-->
 </div>
 <input type="submit" value="Register" style="background-color:#000060;">
 

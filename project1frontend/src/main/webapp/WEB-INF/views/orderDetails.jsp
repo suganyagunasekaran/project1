@@ -11,22 +11,22 @@
 <title>FashionHi5</title>
 </head>
 <body>
-<div class="container-wrapper">
-    <div class="container">
+<div>
+    <div style="margin-top: 25px;" >
             <div class="row">
 
 <c:url var="url" value="/cart/createorder"></c:url>
                              <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
 
                        <div >
-                            <h1 align="center">Conform Order</h1>
+                            <h1 align="center">Confirm Order</h1>
                        </div>
                         ORDER ID: ${customerorder.orderId }
-                  
+                  <hr>
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <address>
-                                    <strong><button disabled>Shipping Address</button></strong><br/>
+                                    <strong>Shipping Address</strong><br/>
                                         ${customerorder.user.customer.shippingaddress.apartmentnumber },
                                    ${customerorder.user.customer.shippingaddress.streetname }
                                 <br/>
@@ -104,7 +104,7 @@
                     </div>
             </div>
         </div>
-        </div>
+       </div>
 </body>
 </html>   
                             

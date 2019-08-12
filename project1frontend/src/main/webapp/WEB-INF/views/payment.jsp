@@ -27,8 +27,8 @@ $(function () {
                     
                        <img src="http://i76.imgup.net/accepted_c22e0.png">
                           <hr>        
-                        <div class="inner-addon left-addon">
-      <i class="glyphicon glyphicon-debitcard"></i> Name on Card    
+                        <div class="form-group">
+                                  <label for="cc-number" class="control-label">Name On Card</label>
       <input type="text" class="form-control" placeholder="Please enter valid name" />
     </div>
                         
@@ -73,6 +73,8 @@ $(function () {
                           </div>  
                         </div>
                     </form>
-             
-</body>
+                    </body>
+                    
+
+
 </html>
