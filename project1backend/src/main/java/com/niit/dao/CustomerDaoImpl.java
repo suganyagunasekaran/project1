@@ -1,6 +1,4 @@
 package com.niit.dao;
-
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +34,7 @@ private SessionFactory sessionFactory;
 	   session.save(customer);
 	   //has to insert into customer table
 	}
+	
 	public boolean isEmailUnique(String email) {
 		Session session=sessionFactory.getCurrentSession();
 		User user=(User)session.get(User.class, email);
