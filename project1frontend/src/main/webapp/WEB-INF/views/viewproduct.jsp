@@ -43,7 +43,7 @@
 			<b>Price: </b>Rs. ${productObj.price }<br><br>
 			<b>Quantity:</b>${productObj.quantity }<br><br>
 			<b>Category:</b>${productObj.category.categoryname}<br><br>
-			<b>Size:</b>XS,S,L,XL,XXL<br>
+		
 						<c:if test="${productObj.quantity==0 }">
 			<button class="btn btn-primary btn-lg" disabled>Out Of Stock</button><br>
 			</c:if>

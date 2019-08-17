@@ -75,9 +75,8 @@ display:block; font-size:36px
   padding-top:20px!important;
   font-family: 'Lobster', cursive;
   font-size:24px;
-  
 }
-  
+
   .jumbotron {
     background-color: #00aeef;
     color: #fff;
@@ -291,7 +290,9 @@ $(window).scroll(function() {
 </div>
 </section>
 
-  <center><h2>Comments</h2></center>
+  <center><h2 style="color:#00aeef;">Client Reviews</h2>
+  <img class="img-responsive" alt="client" src="resources/images/testimonial1.png">
+  </center>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -301,20 +302,21 @@ $(window).scroll(function() {
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner container" role="listbox">
     
       <div class="item active">
-            <h3>Mahalakshmi<small><i>Posted on February 19, 2016</i></small></h3>
-      
-        <h4 style=" margin-top: 20px;">"The best onlineshopping website. I am so excited!!!"<br><span> Malaysia, Selangor</span></h4>
+      		            
+      		<h3>Mahalakshmi<small> Malaysia, Selangor</small></h3><small><i>Posted on February 19, 2016</i></small>
+      		  
+        <h4 style="margin-top: 20px;">"The best onlineshopping website. I am so excited!!!"</h4>
       </div>
       <div class="item">
-       <h3>GunaSekaran<small><i>Posted on June 12, 2018<br></i></small></h3>
-       <h4 style=" margin-top: 20px;"> "In One Word... WOW!!"<br><span>India, Chennai</span></h4>
+       <h3>GunaSekaran <small>India, Chennai</small></h3><small><i>Posted on June 12, 2018</i></small>
+       <h4 style=" margin-top: 20px;"> "In One Word... WOW!!"</h4>
       </div>
       <div class="item">
-            <h3>Suganya<small><i>Posted on May 06, 2019</i></small></h3>
-        <h4 style=" margin-top: 20px;">"Could I... BE any more happy with this Website?"<br><span>Sri Lanka, Colombo</span></h4>
+            <h3>Suganya <small>Sri Lanka, Colombo</small></h3><small><i>Posted on May 06, 2019</i></small>
+        <h4 style=" margin-top: 20px;">"Could I... BE any more happy with this Website?"</h4>
       </div>
     </div>
 
