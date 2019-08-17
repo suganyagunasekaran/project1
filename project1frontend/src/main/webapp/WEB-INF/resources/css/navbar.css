@@ -188,6 +188,8 @@
 }
 .number_counter_bg
 {
-	background: #00aeef;
-    color: #fff
+	background:url(src/main/webapp/WEB-INF/resources/images/smilie.png);
+	background-color: #00aeef;
+    color: #fff;
+    position:relative;
 }

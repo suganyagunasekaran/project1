@@ -99,19 +99,20 @@ private ProductDao productDao;
     	}
     	return "redirect:/cart/getcart";
     }
-    @RequestMapping(value="/cart/shippingaddress")
-    public String getShippingAddress(@AuthenticationPrincipal Principal principal,Model model){
-    	ShippingAddress shipping = null;
-    	model.addAttribute("shippingaddress",shipping);
-    	if(principal==null)
-    		return "login";
-    	String email=principal.getName();
-    	User user=cartItemDao.getUser(email);
-        Customer customer=user.getCustomer();
-   	ShippingAddress shippingAddress=customer.getShippingaddress();
-    	model.addAttribute("shippingaddress",shippingAddress);
-    	return "shippingaddress";
-    }
+   
+	 @RequestMapping(value="/cart/shippingaddress")
+	    public String getShippingAddress(@AuthenticationPrincipal Principal principal,@ModelAttribute ShippingAddress shippingaddress, Model model){
+	    	if(principal==null)
+	    		return "login";
+	    	String email=principal.getName();
+	    	User user=cartItemDao.getUser(email);
+	    	Customer customer=user.getCustomer();
+	    	ShippingAddress shippingAddress=customer.getShippingaddress();
+	      	customer.setShippingaddress(shippingaddress);
+	    	model.addAttribute("shippingaddress",shippingAddress);
+	    	return "shippingaddress";
+	    }
+	
     @RequestMapping(value="/cart/createorder")
     public String createCustomerOrder(@ModelAttribute ShippingAddress shippingaddress,
     		Model model,

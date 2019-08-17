@@ -43,7 +43,6 @@ $(document).ready(function(){
 			phonenumber:{required:true,number:true,minlength:10,maxlength:10},
 			"user.email":{required:true,email:true},
 			"user.password":{required:true,minlength:5,maxlength:10},
-		},
 			"billingaddress.apartmentnumber":{required:true},
 			"billingaddress.streetname":{required:true},
 			"billingaddress.state":{required:true},
@@ -56,7 +55,9 @@ $(document).ready(function(){
 			phonenumber:{required:"Phonenumber is required"},
 			"user.email":{required:"Email is required",email:"Please enter valid email address"}
 		}
+	})
 })
+
 </script>
 </head>
 <body>
@@ -98,7 +99,7 @@ $(document).ready(function(){
 <br>
 
 Check this if same address is for shipping
-		<input type="checkbox" onclick="fillShippingAddress(this.form)" id="shippingaddressform">
+<input type="checkbox" onclick="fillShippingAddress(this.form)" id="shippingaddressform">
 	</div>
 	</div>
 	<b>Address:</b><br>	
@@ -125,29 +126,35 @@ Check this if same address is for shipping
 
 <form:label path="billingaddress.zipcode">Zipcode</form:label>
 <form:input path="billingaddress.zipcode" id="billingaddress.zipcode"/>
-</div><!--  
-<div class="column">
-<b>Shipping address:</b><br>
-<br>
-<form:label path="shippingaddress.apartmentnumber">Apartment No</form:label>
-<form:input path="shippingaddress.apartmentnumber" id="shippingaddress.apartmentnumber"/>
-
-<form:label path="shippingaddress.streetname">Streetname</form:label>
-<form:input path="shippingaddress.streetname" id="shippingaddress.streetname"/>
-
-<form:label path="shippingaddress.city">City</form:label>
-<form:input path="shippingaddress.city" id="shippingaddress.city"/>
-
-<form:label path="shippingaddress.state">State</form:label>
-<form:input path="shippingaddress.state" id="shippingaddress.state"/>
-
-<form:label path="shippingaddress.country">Country</form:label>
-<form:input path="shippingaddress.country" id="shippingaddress.country"/>
-
-<form:label path="shippingaddress.zipcode">Zipcode </form:label>
-<form:input path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>
 </div>
--->
+</div>
+
+<div class="row">
+<div class="column">
+
+<form:label type="hidden" path="shippingaddress.apartmentnumber"></form:label>
+<form:input type="hidden" path="shippingaddress.apartmentnumber" id="shippingaddress.apartmentnumber"/>
+
+<form:label type="hidden" path="shippingaddress.streetname"></form:label>
+<form:input type="hidden" path="shippingaddress.streetname" id="shippingaddress.streetname"/>
+
+<form:label type="hidden" path="shippingaddress.city"></form:label>
+<form:input type="hidden" path="shippingaddress.city" id="shippingaddress.city"/>
+</div>
+<br>
+<br>
+<br>
+
+<div class="column">
+<form:label type="hidden" path="shippingaddress.state"></form:label>
+<form:input type="hidden" path="shippingaddress.state" id="shippingaddress.state"/>
+
+<form:label type="hidden" path="shippingaddress.country"></form:label>
+<form:input type="hidden" path="shippingaddress.country" id="shippingaddress.country"/>
+
+<form:label type="hidden" path="shippingaddress.zipcode"></form:label>
+<form:input type="hidden" path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>
+</div>
 </div>
 <input type="submit" value="Register" style="background-color:#000060;">
 
