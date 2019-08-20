@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
 <title>FashionHi5</title>
 <style>
 .column {
@@ -13,7 +13,8 @@
   width: 50%;
   margin-top: 6px;
   padding: 10px;
-  font-family: 'Lobster', cursive;
+  font-family: 'Merienda', cursive;
+  
   font-size:24px;
   
 }
@@ -23,7 +24,7 @@
 <body>
 	<div>
 		<div class="panel-info">
-			<div class="panel panel-heading">Product Details</div>
+			<div class="panel panel-heading">@@@@@@@@</div>
 			<div class="panel panel-body">
 			<c:url value="/cart/addtocart/${productObj.id}" var="url"></c:url>
 			
