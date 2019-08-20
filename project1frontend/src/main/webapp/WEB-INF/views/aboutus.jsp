@@ -3,7 +3,7 @@
 <%@ include file="header.jsp" %>
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Bootstrap Theme Company Page</title>
+  <title>FashionHi5</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -275,23 +275,25 @@ $(window).scroll(function() {
 
 	<div class="row">
 		<div class="col-md-3">
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model6.jpg"></a>
+			<a href="http://localhost:8080/project1frontend/all/getproduct/40"><img class="img-responsive"  alt="Fashion" src="resources/images/model6.jpg"></a>
+		</div>
+		<div class="col-md-3">
+					<a href="http://localhost:8080/project1frontend/all/getproduct/34"><img class="img-responsive"  alt="Fashion" src="resources/images/wed.jpg"></a>			
+			
 		</div>
 		<div class="col-md-3">	
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model7.jpg"></a>			
+			<a href="http://localhost:8080/project1frontend/all/getproduct/49"><img class="img-responsive"  alt="Fashion" src="resources/images/IMG_20171007_212153.jpg"></a>			
 		</div>
 		<div class="col-md-3">	
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model9.jpg"></a>			
-		</div>
-		<div class="col-md-3">	
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model8.jpg"></a>			
+					<a href="http://localhost:8080/project1frontend/all/getproduct/54"><img class="img-responsive"  alt="Fashion" src="resources/images/model5.jpg"></a>			
+		
 		</div>
 	</div>
 </div>
 </section>
 
   <center><h2 style="color:#00aeef;">Client Reviews</h2>
-  <img class="img-responsive" alt="client" src="resources/images/testimonial1.png">
+ <!--  <img class="img-responsive" alt="client" src="resources/images/testimonial1.png"> -->
   </center>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
@@ -305,16 +307,18 @@ $(window).scroll(function() {
     <div class="carousel-inner container" role="listbox">
     
       <div class="item active">
-      		            
+      		    <center><img class="img-responsive" alt="client" src="resources/images/testimonial1.png">  </center>       
       		<h3>Mahalakshmi<small> Malaysia, Selangor</small></h3><small><i>Posted on February 19, 2016</i></small>
       		  
         <h4 style="margin-top: 20px;">"The best onlineshopping website. I am so excited!!!"</h4>
       </div>
       <div class="item">
+      		    <center><img class="img-responsive" alt="client" src="resources/images/testimonial1.png">  </center>     
        <h3>GunaSekaran <small>India, Chennai</small></h3><small><i>Posted on June 12, 2018</i></small>
        <h4 style=" margin-top: 20px;"> "In One Word... WOW!!"</h4>
       </div>
       <div class="item">
+      		    <center><img class="img-responsive" alt="client" src="resources/images/testimonial1.png">  </center>     
             <h3>Suganya <small>Sri Lanka, Colombo</small></h3><small><i>Posted on May 06, 2019</i></small>
         <h4 style=" margin-top: 20px;">"Could I... BE any more happy with this Website?"</h4>
       </div>

@@ -34,7 +34,8 @@
 
 <p align="center">
 <b>Shipping Address</b>
-</p><br>	
+</p><br>
+	
 <form:hidden path="id"/>
 
 <form:label path="apartmentnumber">Enter Apartmentnumber</form:label><br>

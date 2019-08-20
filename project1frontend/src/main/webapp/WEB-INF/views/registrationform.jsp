@@ -141,9 +141,6 @@ Check this if same address is for shipping
 <form:label type="hidden" path="shippingaddress.city"></form:label>
 <form:input type="hidden" path="shippingaddress.city" id="shippingaddress.city"/>
 </div>
-<br>
-<br>
-<br>
 
 <div class="column">
 <form:label type="hidden" path="shippingaddress.state"></form:label>
@@ -157,9 +154,6 @@ Check this if same address is for shipping
 </div>
 </div>
 <input type="submit" value="Register" style="background-color:#000060;">
-
-
-
 
 </form:form>
 </body>
