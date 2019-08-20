@@ -191,16 +191,16 @@ Happy Shopping!!</p>
 	<h2 class="product_h2" style="font-family: 'Lobster';">New Arrival</h2>
 	<div class="row">
 		<div class="col-md-3">
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model4.jpg"></a>
+			<a href="http://localhost:8080/project1frontend/all/getproduct/53"><img class="img-responsive"  alt="Fashion" src="resources/images/model4.jpg"></a>
 		</div>
 		<div class="col-md-3">	
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model3.jpg"></a>			
+			<a href="http://localhost:8080/project1frontend/all/getproduct/55"><img class="img-responsive"  alt="Fashion" src="resources/images/model3.jpg"></a>			
 		</div>
 		<div class="col-md-3">	
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model2.jpg"></a>			
+			<a href="http://localhost:8080/project1frontend/all/getproduct/39"><img class="img-responsive"  alt="Fashion" src="resources/images/model2.jpg"></a>			
 		</div>
 		<div class="col-md-3">	
-			<a href="#"><img class="img-responsive"  alt="Fashion" src="resources/images/model1.jpg"></a>			
+			<a href="http://localhost:8080/project1frontend/all/getproduct/56"><img class="img-responsive"  alt="Fashion" src="resources/images/model1.jpg"></a>			
 		</div>
 	</div>
 </div>
