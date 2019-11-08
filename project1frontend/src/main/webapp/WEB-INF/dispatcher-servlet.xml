@@ -9,7 +9,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- MVC -->
+<!-- mvc -->
 <mvc:annotation-driven></mvc:annotation-driven>
 
 <!-- Context - ApplicationContext (spring container) -->
